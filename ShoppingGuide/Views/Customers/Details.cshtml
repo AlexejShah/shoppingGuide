@@ -1,0 +1,39 @@
+﻿@model ShoppingGuide.DbModels.Customers
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patronimic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patronimic)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CustomerId">Edit</a> |
+    <a asp-controller="CustomersAdditionals" asp-action="Details" asp-route-id="@Model.CustomerId">Additional Info</a> |
+    <a asp-controller="Shoppings" asp-action="Index" asp-route-id="@Model.CustomerId">Purchase Customer</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

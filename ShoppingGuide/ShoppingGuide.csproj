@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180408134011_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408134011_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180408172216_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408172216_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180408172745_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408172745_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180408191531_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408191531_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180408193253_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408193253_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180408201309_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408201309_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20180408222425_InitialCreate.cs" />
+    <Compile Remove="Migrations\20180408222425_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Photo\" />
+  </ItemGroup>
+
+</Project>

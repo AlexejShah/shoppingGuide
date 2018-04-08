@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ShoppingGuide.DbModels.Shopping>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Purchase @ViewData["customerName"]</h2>
+
+<p>
+    <a asp-action="Create" asp-route-id="@ViewData["id"]">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sort="@ViewData["DatePurchaseSortParm"]" asp-route-type="DatePurchase">@Html.DisplayNameFor(model => model.DatePurchase)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sort="@ViewData["SumRecieptSortParm"]" asp-route-type="SumReciept">@Html.DisplayNameFor(model => model.SumReciept)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePurchase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SumReciept)
+            </td>
+            <td>
+                <img src="@(item.Photo != null ? item.Photo.Path : string.Empty)" style="height:50px"/>
+                @Html.HiddenFor(modelItem => item.Photo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
